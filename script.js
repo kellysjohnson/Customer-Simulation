@@ -24,10 +24,18 @@ $(document).ready(function() {
        array = data.split('\n');
 
        for (var i=0; i<array.length; i++) {
-           $(".shouts").append("<div id" + i + ">" + array[i] + "</div>");
+           $(".shouts").append("<div id" + i + ">" + array[i] + "</div>").slideDown(500).slideUp(500);
        }
    });
 
+    // consider using "SET INTERVAL" Function
+
+    $("#ball").delay(1000);
+    for(var i=0;i<=5;i++){
+        $("#ball").animate({left: '+=200', top: ['+=200', 'easeOutBounce']}, 3000, 'linear');
+        $("#ball").animate({left: '+=100', top: ['-=200', 'easeOutQuad']}, 500, 'linear');
+    }
+    $("#ball").animate({left: '+=100', top: ['+=200', 'easeInQuad']}, 500, 'linear');
 
 });
 
